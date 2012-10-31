@@ -17,4 +17,13 @@ public class UserImpl implements User {
 	public void setId(int id) {
 		this.id = id;
 	}	
-}
+
+	public void register(Library myLibrary) {
+	this.id = myLibrary.getId();
+	}
+	
+	public MockLibrary getLibrary() {
+	return new MockLibrary();
+	}
+	
+}	

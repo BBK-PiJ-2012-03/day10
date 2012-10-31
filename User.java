@@ -14,7 +14,15 @@ public interface User {
 	*/
 	void setId(int id);
 	
+	/**
+	*A method which allows users registering with a library and getting a user-ID
+	*/
+	void register(Library library);
 	
+	/**
+	*A getter which returns the name of the library
+	*/
+	MockLibrary getLibrary();
 }
 
 	

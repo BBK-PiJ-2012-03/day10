@@ -1,12 +1,14 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 public class UserTest {
-	private UserImpl myUser;
+	private User myUser;
+	private Library myLibrary;
 	
 	@Before
 	public void buildUp() {
 	// A file is created here to be used in every test.
 	myUser = new UserImpl("John");
+	myLibrary = new MockLibrary();
 	}
 	
 	@After
@@ -22,4 +24,13 @@ public class UserTest {
 		assertEquals(1, myUser.getId());
 	
 	}
+	
+	@Test
+	public void testRegistration() {
+	
+		myUser.register(myLibrary);
+		assertEquals(myLibrary.getName(), myUser.getLibrary());
+		assertEquals(myLibrary.getId(), myUser.getId());
+	}
+
 }
